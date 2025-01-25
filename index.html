@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G12NET</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="style.js"></script> <!-- Corrigido para incluir como script -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<!-- Início da estilização do site -->
+    <!-- Cabeçalho e Menu -->
+    <style> .banner-content {
+	width: 40%;
+	height: 80%:
+	margin: 0; 
+        opacity: 0; animation: fadeIn 2s forwards; /* Animação de 2 segundos */ 
+    } 
+    @keyframes fadeIn {
+         to { opacity: 5; } 
+        }
+    </style>
+<style>
+        /*Estilo do botão de telefone*/
+        #contact-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            position: relative;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        #contact-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1); /* Botão aumenta de tamanho*/
+        }
+
+        #phone-number {
+            display: true;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+    <style> body { 
+        font-family: Arial, sans-serif; 
+        } 
+        .header, .banner, .content { 
+            padding: 20px; 
+            margin: 10px; 
+           } 
+            /* Flexbox */ 
+        .container { 
+            display: flex; 
+            flex-direction: row; 
+            flex-wrap: wrap; 
+            } 
+            .item { 
+                flex: 1 1 300px; 
+                margin: 10px; 
+                background-color: #f4f4f4; 
+                padding: 20px; 
+            } 
+            /* Media Queries */ 
+            @media (max-width: 600px) { 
+                .header, .banner, .content 
+                { padding: 10px; 
+                    font-size: 14px;
+                } 
+                } 
+                @media (min-width: 601px) and (max-width: 1200px) { 
+                    .header, .banner, .content 
+                    { padding: 20px; 
+                        font-size: 16px;
+                    } 
+                } 
+                @media (min-width: 1201px) {
+                    .header, .banner, .content 
+                    { padding: 30px; 
+                    font-size: 18px; 
+                    } 
+                    } 
+        </style>
+    <style>
+        #btn-banner {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            position: relative;
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Animação de transição */
+        }
+        #btn-banner:hover {
+            background-color: #0056b3;
+            transform: scale(1.05); /* Botão aumenta de tamanho */
+        }
+        </style>
+	<style>
+		/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Cabeçalho e navegação 
+header {
+    background-color: #333;
+    padding: 15px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #ec8f03;
+} */
+
+/* Banner aprimorado */
+.banner {
+    background: url('banner.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    
+}
+
+/* Sobreposição para contraste do texto */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255); 
+    /*background: linear-gradient(0deg, purple 30%, violet 100%);*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style the header with a grey background and some padding */
+.header {
+    overflow: hidden;
+    background-color: purple;
+    padding: 20px 10px;
+  }
+  
+  /* Estilo dos links do Cabeçalho */
+  .header a {
+    float: left;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  /* Estilo do link do Logo*/
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  /* Change the background color on mouse-over */
+  .header a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Style the active/current link*/
+  .header a.active {
+    background-color: orange;
+    color: black;
+    font-weight: 300;
+  }
+  
+  /* Float the link section to the right */
+  .header-right {
+    float: right;
+  }
+  
+  /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+  @media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .header-right {
+      float: none;
+    }
+  }
+
+/* Conteúdo do banner */
+.banner-content {
+    z-index: 1;
+    max-width: 40%;
+    padding: 20px;
+    
+}
+
+
+.banner p {
+    font-size: 48px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.banner h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+.banner p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Botão de chamada à ação no banner */
+.btn-banner {
+    background-color: #ec8f03;;
+    color: rgb(255, 255, 255);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-banner:hover {
+    background-color: #ec8f03;
+    transform: scale(1.05);
+}
+
+
+/* Seção do Estilo do Carrosel */
+
+* {box-sizing:border-box}
+
+/* Seção de Serviços */
+#servicos {
+    padding: 50px 20px;
+    background-color: orange;
+    text-align: center;
+}
+
+#servicos h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.servico {
+    display: inline-block;
+    width: 30%;
+    margin: 0 1%;
+    vertical-align: top;
+    text-align: center;
+}
+
+.servico i {
+    color: purple;
+    margin-bottom: 20px;
+}
+
+.servico h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.servico p {
+    font-size: 16px;
+}
+
+.servico:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Seção Sobre Nós */
+#sobre {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#sobre h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#sobre p {
+    font-size: 18px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+/* Seção de Contato */
+#contato {
+    padding: 50px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+#contato h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#contato form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#contato label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#contato input, #contato textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contato button {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+#contato button:hover {
+    background-color: orange;
+    transform: scale(1.1);
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #4CAF50;
+}
+
+footer i {
+    font-size: 24px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 36px;
+    }
+
+    .banner p {
+        font-size: 18px;
+    }
+
+    .btn-banner {
+        padding: 12px 25px;
+        font-size: 18px;
+    }
+
+    .servico {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #contato form {
+        width: 100%;
+    }
+}
+/* Estilo da seção de contato */
+#contato {
+    padding: 50px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+#contato h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contato-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+}
+
+.btn-email {
+    background-color: orange;
+}
+
+.btn-instagram {
+    background-color: purple;
+}
+
+.btn-telephone {
+    background-color: orange;
+}
+
+
+.btn:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contato-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+</style>
+<style> 
+    .banner { 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        text-align: center; 
+        padding: 80px 40px; 
+        background-color: #333; 
+        color: rgb(0, 0, 0); 
+        box-sizing: border-box; 
+        } 
+    .banner-content img { 
+        max-width: 100%; 
+        height: auto; 
+        } 
+    .banner-content p { 
+        font-size: 1.2em; 
+        margin: 10px 0; 
+        } 
+    .btn-banner { 
+        display: inline-block; 
+        padding: 10px 20px; 
+        margin-top: 20px; 
+        background-color: purple; 
+        color: white; 
+        text-decoration: none; 
+        border-radius: 4px; 
+        } 
+</style>
+<!-- Final da Estilização do site -->
+    <div class="header">
+        <a href="./index.html" class="logo">G12NET</a>
+        <div class="header-right">
+          <a class="active" href="https://portal.g12net.net.br/">Área do Cliente</a>
+          <a href="#contato">Fale Conosco</a>
+          <a href="#sobre">Sobre Nós</a>
+        </div>
+      </div>
+    <!-- Banner aprimorado -->
+    <section id="home" class="banner">
+        <div class="overlay">
+            <div class="banner-content">
+                <p style="font-size: 54px;">Bem-vindo a</p> <!-- Ajuste o tamanho do texto aqui -->
+                <h1><img src="https://i.ibb.co/fCKkWDt/g12net-png.png" alt="G12NET" style="width: 100%;"></h1>
+                <p style="font-size: 32px;">Internet que não deixa você na mão!</p> <!-- Ajuste o tamanho do texto aqui -->
+                <a href="#planos" class="btn btn-banner">Conheça Nossos Planos</a>
+            </div>
+        </div>
+    </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    <section id="planos">
+        <!-- Seção do Carrossel -->
+        <style>
+            
+            #album-rotator {
+                width: auto;
+                float: middle;
+                white-space: nowrap;
+                overflow: hidden;
+                position: relative;
+                word-break: keep-all;
+                padding: 2rem 0;
+                margin-left: 10px;
+            }
+            #album-rotator-holder {
+            position: relative;
+            user-select: none;
+            will-change: transform;
+            /* transition: all 0.01s ease-out; */
+            /* transition: all 0.01s linear; */
+        }
+        
+        div#album-rotator-holder {}
+        #album-rotator:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            /*background: linear-gradient(-90deg, #161231 5%, transparent 40%);*/
+        }
+        .album-item {
+            word-break: keep-all;
+            background: rgb(255, 255, 255);
+            box-shadow: 0 2px 30px rgba(0,0,0,0.5);
+            position: relative;
+            width: 250px;
+            -webkit-user-drag: none;
+            user-drag: none;
+            height: 320px;
+            user-select: none;
+            border-radius: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            margin: 0 3rem 0 0;
+            transition: all 0.2s ease-out;
+            transform: scale(1);
+            margin-left: 10px;
+        }
+        
+        .album-item:hover {
+            transform: scale(1.02);
+        }
+        .album-details {
+            background: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.5);
+            padding: 1rem;
+            white-space: initial;
+            float: left;
+            box-sizing: border-box;
+            color: rgb(0, 0, 0);
+            height: 100%;
+            font-size: 2.5rem;
+            font-weight: 600;
+            z-index: 99;
+        }
+        .fidelidade {
+            font-weight: 600;
+            font-size: medium;
+        }
+        .title {
+            font-weight: 900;
+            display: inline-block;
+            width: 100%;
+        }
+        .subtitle {
+            font-weight: 100;
+        }
+        .subtitle-promo {
+            font-weight: 100;
+            line-height: 1.25rem;
+            font-size: small;
+        }
+        .promo {
+            font-weight: 800;
+            line-height: 0.25rem;
+            font-size: larger;
+            
+        }
+        .subtext {
+            font-size: 1.1167rem;
+            position: middle;
+            bottom: 0.1;
+            left: 0;
+            padding: 1.25rem 1rem;
+            width: 100%;
+            white-space: initial;
+            letter-spacing: 0;
+            box-sizing: border-box;
+            font-weight: 400;
+        }
+        .
+        
+        .icon {
+            font-size: 1rem;
+            line-height: 1rem;
+            display: block;
+            padding: 0 0 0.5rem 0;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: white;
+            margin: 0;
+            font-weight: 600;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        </style>
+        <h2>Planos de Internet para a sua casa</h2>
+        <div id="album-rotator" class="carousel">
+            <div id="album-rotator-holder" class="carousel-inner">
+                <div class="album-item">
+                    <span class="album-details">
+                        <!--<span class="fidelidade">Planos c/Fidelidade</span>-->
+                        <br>
+                        <span class="title">50 Mega</span>
+                        <br>
+                        <span class="subtitle">R$80,00</span>
+                        <br>
+                        <span class="subtext">Mais Informações:</span>
+                        <p>
+                            <a href="https://api.whatsapp.com/send?phone=555121607000&text=Gostaria+de+informa%C3%A7%C3%B5es+sobre+os+planos+de+internet&fbclid=PAZXh0bgNhZW0CMTEAAaYGJl5VxyXBiXEpdUSx_SQIBC6AkyeZBoqIDBdLqtcTALX8RpauUYpDOwQ_aem_OrR9Rg8IOlymmQXc8qzdGA" class="btn btn-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </p>
+                    </span>
+                </div>
+                <div class="album-item">
+                    <span class="album-details">
+                        <span class="fidelidade">Plano c/ Fidelidade</span>
+                        <br>
+                        <span class="title">100 Mega</span>
+                        <br>
+                        <span class="subtitle-promo"><del>R$90,00</del></span>
+                        <br>
+                        <span class="promo">R$69,90</span>
+                        <br>
+                        <span class="subtext">Mais Informações:</span>
+                        <p>
+                            <a href="https://api.whatsapp.com/send?phone=555121607000&text=Gostaria+de+informa%C3%A7%C3%B5es+sobre+os+planos+de+internet&fbclid=PAZXh0bgNhZW0CMTEAAaYGJl5VxyXBiXEpdUSx_SQIBC6AkyeZBoqIDBdLqtcTALX8RpauUYpDOwQ_aem_OrR9Rg8IOlymmQXc8qzdGA" class="btn btn-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </p>
+                        </span>
+                </div>
+                <div class="album-item">
+                    <span class="album-details">
+                        <!--<span class="fidelidade">Planos c/Fidelidade</span>-->
+                        <br>
+                        <span class="title">150 Mega</span>
+                        <br>
+                        <span class="subtitle">R$120,00</span>
+                        <br>
+                        <span class="subtext">Mais Informações:</span>
+                        <p>
+                            <a href="https://api.whatsapp.com/send?phone=555121607000&text=Gostaria+de+informa%C3%A7%C3%B5es+sobre+os+planos+de+internet&fbclid=PAZXh0bgNhZW0CMTEAAaYGJl5VxyXBiXEpdUSx_SQIBC6AkyeZBoqIDBdLqtcTALX8RpauUYpDOwQ_aem_OrR9Rg8IOlymmQXc8qzdGA" class="btn btn-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </p>
+                        </span>
+                </div>
+                <div class="album-item">
+                    <span class="album-details">
+                        <!--<span class="fidelidade">Planos c/Fidelidade</span>-->
+                        <br>
+                        <span class="title">200 Mega</span>
+                        <br>
+                        <span class="subtitle">R$140,00</span>
+                        <br>
+                        <span class="subtext">Mais Informações:</span>
+                        <p>
+                            <a href="https://api.whatsapp.com/send?phone=555121607000&text=Gostaria+de+informa%C3%A7%C3%B5es+sobre+os+planos+de+internet&fbclid=PAZXh0bgNhZW0CMTEAAaYGJl5VxyXBiXEpdUSx_SQIBC6AkyeZBoqIDBdLqtcTALX8RpauUYpDOwQ_aem_OrR9Rg8IOlymmQXc8qzdGA" class="btn btn-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </p>
+                        </span>
+                </div>
+                <div class="album-item">
+                    <span class="album-details">
+                        <!--<span class="fidelidade">Planos c/Fidelidade</span>-->
+                        <br>
+                        <span class="title">250 Mega</span>
+                        <br>
+                        <span class="subtitle">R$160,00</span>
+                        <br>
+                        <span class="subtext">Mais Informações:</span>
+                        <p>
+                            <a href="https://api.whatsapp.com/send?phone=555121607000&text=Gostaria+de+informa%C3%A7%C3%B5es+sobre+os+planos+de+internet&fbclid=PAZXh0bgNhZW0CMTEAAaYGJl5VxyXBiXEpdUSx_SQIBC6AkyeZBoqIDBdLqtcTALX8RpauUYpDOwQ_aem_OrR9Rg8IOlymmQXc8qzdGA" class="btn btn-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </p>
+                        </span>
+                </div>
+                <div class="album-item">
+                    <span class="album-details">
+                        <!--<span class="fidelidade">Planos c/Fidelidade</span>-->
+                        <br>
+                        <span class="title">300 Mega</span>
+                        <br>
+                        <span class="subtitle">R$180,00</span>
+                        <br>
+                        <span class="subtext">Mais Informações:</span>
+                        <p>
+                            <a href="https://api.whatsapp.com/send?phone=555121607000&text=Gostaria+de+informa%C3%A7%C3%B5es+sobre+os+planos+de+internet&fbclid=PAZXh0bgNhZW0CMTEAAaYGJl5VxyXBiXEpdUSx_SQIBC6AkyeZBoqIDBdLqtcTALX8RpauUYpDOwQ_aem_OrR9Rg8IOlymmQXc8qzdGA" class="btn btn-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </p>
+                        </span>
+                </div>
+                <div class="album-item">
+                    <span class="album-details">
+                        <span class="fidelidade">Plano com fidelidade</span>
+                        <br>
+                        <span class="title">400 Mega</span>
+                        <br>
+                        <span class="subtitle-promo"><del>R$200,00</del></span>
+                        <br>
+                        <span class="promo">R$99,00</span>
+                        <br>
+                        <span class="subtext">Mais Informações:</span>
+                        <p>
+                            <a href="https://api.whatsapp.com/send?phone=555121607000&text=Gostaria+de+informa%C3%A7%C3%B5es+sobre+os+planos+de+internet&fbclid=PAZXh0bgNhZW0CMTEAAaYGJl5VxyXBiXEpdUSx_SQIBC6AkyeZBoqIDBdLqtcTALX8RpauUYpDOwQ_aem_OrR9Rg8IOlymmQXc8qzdGA" class="btn btn-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </p>
+                        </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+      <style>
+        .promo-banner-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+        
+        .promo-banner {
+            flex: 1 1 300px;
+            max-width: 1660px;
+            height: 357px;
+            background-color: #007BFF;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .promo-banner h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+      </style>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+      <!-- Container para Banners Promocionais -->
+      <div class="promo-banner-container"> 
+        <div class="promo-banner"> 
+        <a href="https://www.instagram.com/acemtelecom/"><img src="./src/banner/banner-acem.PNG " alt=" " border="0"></a>
+    </div> 
+    </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="servicos">
+        <h2>Nossos Serviços</h2>
+        <div class="servico">
+            <i class="fas fa-network-wired fa-4x"></i>
+            <h3>Monitoramento e Manutenção Remota</h3>
+            <p>Monitoramento e manutenção feita remotamente, para que você se preocupe menos, e navegue mais.</p>
+        </div>
+        <div class="servico">
+            <i class="fas fa-wifi fa-4x"></i>
+            <h3>Comodato</h3>
+            <p>Oferecemos os equipamentos para sua casa, empresa ou eventos. Tudo para anteder as suas necessidades.</p>
+        </div>
+        <div class="servico">
+            <i class="fas fa-headset fa-4x"></i>
+            <h3>Suporte Técnico</h3>
+            <p>Oferecemos Suporte Técnico pessoal, onde nossos atendentes estarão prontos para prestar auxílio pelos nossos Canais Oficias</p>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Espaço para inserir banners promocionais. Medidas: A:370px L:1660px -->
+    <div class="promo-banner-container"> 
+        <div class="promo-banner">
+            <h3></h3>
+            <a href="#planos"><img src="./src/banner/banner-placeholder.png " alt="Assine já!" border="0"></a>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p style="font-size: 28px;">Na G12Net, levamos a conexão de alta velocidade a outro nível. Nossão missão é levar até a sua casa uma navegação super-rápida, ultrarrealista e estável. Imagina assistir seus filmes e séries favoritos em alta definição, jogar online sem lag ou trabalhar de casa com total eficiência – nós tornamos isso possível!<br>
+
+            Estamos comprometidos em transformar sua experiência online, proporcionando uma conexão que não te deixa na mão. Nosso serviço de fibra ótica é desenhado para acompanhar o seu ritmo e atender às suas necessidades, seja para trabalho, estudo ou lazer.
+            
+            Venha para a G12Net e descubra o futuro da internet. Conexão de qualidade é aqui!</p>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="promo-banner-container"> 
+        <div class="promo-banner"> 
+        <h3></h3>
+        <a href="https://velocidade.acem.net.br/"><img src="./src/banner/banner-veloc.PNG " alt=" " border="0"></a> 
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <div class="contato-links">
+            <a href="https://api.whatsapp.com/send?phone=555121607000&text=Gostaria+de+informa%C3%A7%C3%B5es+sobre+os+planos+de+internet&fbclid=PAZXh0bgNhZW0CMTEAAaYGJl5VxyXBiXEpdUSx_SQIBC6AkyeZBoqIDBdLqtcTALX8RpauUYpDOwQ_aem_OrR9Rg8IOlymmQXc8qzdGA" class="btn btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="mailto:comercial@g12net.net.br" class="btn btn-email">
+                <i class="fas fa-envelope"></i> E-mail
+            </a>
+            <a href="https://www.instagram.com/g12internet/" class="btn btn-instagram"  target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <button id="contact-button">Telefone</button>
+            <div id="phone-number">(51) 2160-7000</div>
+            <script>
+                // Script para tornar o carrossel arrastável
+                const carousel = document.querySelector('.carousel');
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+        
+                carousel.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    startX = e.pageX - carousel.offsetLeft;
+                    scrollLeft = carousel.scrollLeft;
+                });
+        
+                carousel.addEventListener('mouseleave', () => {
+                    isDown = false;
+                });
+        
+                carousel.addEventListener('mouseup', () => {
+                    isDown = false;
+                });
+        
+                carousel.addEventListener('mousemove', (e) => {
+                    if(!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - carousel.offsetLeft;
+                    const walk = (x - startX) * 1; // Scroll veloz
+                    carousel.scrollLeft = scrollLeft - walk;
+                });
+            </script>
+            <script>
+                const button = document.getElementById('contact-button');
+                const phoneNumber = document.getElementById('phone-number');
+        
+                button.addEventListener('mouseover', () => {
+                    phoneNumber.style.display = 'block';
+                    button.textContent = '(51) 2160-7000'; // Esconde o texto do botão
+                });
+        
+                button.addEventListener('mouseleave', () => {
+                    phoneNumber.style.display = 'none';
+                    button.textContent = 'Telefone'; // Mostra o texto do botão novamente
+                });
+            </script>
+    </section>
+    <footer>
+        <p>&copy; 2024 G12NET. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        import * as THREE from './js/src/Three.js';
+import { rgb, loader, randomInteger } from './js/src/utils.js';
+
+const config = {
+    individualItem: '.album-item', // class of individual item
+    carouselWidth: 1000, // in px
+    carouselId: '#album-rotator', // carousel selector
+    carouselHolderId: '#album-rotator-holder', // carousel should be <div id="carouselId"><div id="carouselHolderId">{items}</div></div>
+    colors: [
+        // Define colors for each item. If more items than colors, then first color will be used as default
+        // Format { low: rgb(), high: rgb() for each color }
+        { low: rgb(0, 114, 255), high: rgb(48, 0, 255) },
+        { low: rgb(236, 166, 15), high: rgb(233, 104, 0) },
+        { low: rgb(43, 75, 235), high: rgb(213, 51, 248) },
+        { low: rgb(175, 49, 49), high: rgb(123, 16, 16) }
+    ]
+}
+
+// Async function for generating webGL waves
+const createWave = async function(selector, colors) {      
+    if(document.querySelectorAll(selector) !== null && document.querySelectorAll(selector).length > 0) {
+        // Import all the fragment and vertex shaders
+        const noise = await loader('/shaders/noise.glsl');
+        const fragment = await loader('/shaders/fragment.glsl');
+        const vertex = await loader('/shaders/vertex.glsl');
+        let i = 0;
+        // For each of the selector elements
+        document.querySelectorAll(selector).forEach(function(item) {
+            // Create a renderer
+            
+            const newCanvas = document.createElement('canvas');
+            newCanvas.id = `canvas-${i}`;
+            item.appendChild(newCanvas);
+            
+            const renderer = new THREE.WebGLRenderer({
+                powerPreference: "high-performance",
+                antialias: true, 
+                alpha: true,
+                canvas: document.getElementById(`canvas-${i}`)
+            });
+
+            // Get el width and height
+            const elWidth = parseFloat(window.getComputedStyle(item).width);
+            const elHeight = parseFloat(window.getComputedStyle(item).height);
+
+            // Set sizes and set scene/camera
+            renderer.setSize( elWidth, elHeight );
+            renderer.setPixelRatio( window.devicePixelRatio );
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera( 75, elWidth / elHeight, 0.1, 1000 );
+
+            // Check on colors to use
+            let high = colors[0].high; 
+            let low = colors[0].low;
+            if(typeof colors[i] !== "undefined") {
+                high = colors[i].high;
+                low = colors[i].low;
+                ++i;
+            }
+
+            // And use the high color for the subtext.
+            if(item.querySelector('.subtext') !== null) {
+                item.querySelector('.subtext').style.background = `rgba(${high.x},${high.y},${high.z},0.75)`;
+            }
+
+            // Create a plane, and pass that through to our shaders
+            let geometry = new THREE.PlaneGeometry(600, 600, 100, 100);
+            let material = new THREE.ShaderMaterial({
+                uniforms: {
+                    u_lowColor: {type: 'v3', value: low },
+                    u_highColor: {type: 'v3', value: high },
+                    u_time: {type: 'f', value: 0},
+                    u_height: {type: 'f', value: 1},
+                    u_rand: {type: 'f', value: new THREE.Vector2(randomInteger(6, 10), randomInteger(8, 10)) }
+                },
+                fragmentShader: noise + fragment,
+                vertexShader: noise + vertex,
+            });
+
+            // Create the mesh and position appropriately
+            let mesh = new THREE.Mesh(geometry, material);
+            mesh.position.set(0, 0, -300);
+            scene.add(mesh);
+
+            // On hover effects for each item
+            let enterTimer, exitTimer;
+            item.addEventListener('mouseenter', function(e) {
+                if(typeof exitTimer !== "undefined") {
+                    clearTimeout(exitTimer);
+                }
+                enterTimer = setInterval(function() {
+                    if(mesh.material.uniforms.u_height.value >= 0.5) {
+                        mesh.material.uniforms.u_height.value -= 0.05;
+                    } else {
+                        clearTimeout(enterTimer);
+                    }
+                }, 10);
+            });
+            item.addEventListener('mouseleave', function(e) {
+                if(typeof enterTimer !== "undefined") {
+                    clearTimeout(enterTimer);
+                }
+                exitTimer = setInterval(function() {
+                    if(mesh.material.uniforms.u_height.value < 1) {
+                        mesh.material.uniforms.u_height.value += 0.05;
+                    } else {
+                        clearTimeout(exitTimer);
+                    }
+                }, 10);
+            });
+
+            // Render
+            renderer.render( scene, camera );
+            let t = 0;
+
+            // Animate
+            const animate = function () {
+                requestAnimationFrame( animate );
+                renderer.render( scene, camera );
+                mesh.material.uniforms.u_time.value = t;
+                t = t + 0.02;
+            };
+            animate();
+        });
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function(e) {
+    createWave(config.individualItem, config.colors);
+
+    // Get items
+    const el = document.querySelector(config.individualItem);
+    const elWidth = parseFloat(window.getComputedStyle(el).width) + parseFloat(window.getComputedStyle(el).marginLeft) + parseFloat(window.getComputedStyle(el).marginRight);
+    
+    // Track carousel
+    let mousedown = false;
+    let movement = false;
+    let initialPosition = 0;
+    let selectedItem;
+    let currentDelta = 0;
+
+    document.querySelectorAll(config.carouselId).forEach(function(item) { 
+        item.style.width = `${config.carouselWidth}px`;
+    });
+    
+    document.querySelectorAll(config.carouselId).forEach(function(item) {
+        item.addEventListener('pointerdown', function(e) {
+            mousedown = true;
+            selectedItem = item;
+            initialPosition = e.pageX;
+            currentDelta = parseFloat(item.querySelector(config.carouselHolderId).style.transform.split('translateX(')[1]) || 0;
+        }); 
+    });
+    
+    const scrollCarousel = function(change, currentDelta, selectedItem) {
+        let numberThatFit = Math.floor(config.carouselWidth / elWidth);
+        let newDelta = currentDelta + change;
+        let elLength = selectedItem.querySelectorAll(config.individualItem).length - numberThatFit;
+        if(newDelta <= 0 && newDelta >= -elWidth * elLength) {
+            selectedItem.querySelector(config.carouselHolderId).style.transform = `translateX(${newDelta}px)`;
+        } else {
+            if(newDelta <= -elWidth * elLength) {
+                selectedItem.querySelector(config.carouselHolderId).style.transform = `translateX(${-elWidth * elLength}px)`;
+            } else if(newDelta >= 0) {
+                selectedItem.querySelector(config.carouselHolderId).style.transform = `translateX(0px)`;
+            }
+        }
+    }
+
+    document.body.addEventListener('pointermove', function(e) {
+        if(mousedown == true && typeof selectedItem !== "undefined") {
+            let change = -(initialPosition - e.pageX);
+            scrollCarousel(change, currentDelta, document.body);
+            document.querySelectorAll(`${config.carouselId} a`).forEach(function(item) {
+                item.style.pointerEvents = 'none';
+            });
+            movement = true;
+        }
+    });
+    
+    ['pointerup', 'mouseleave'].forEach(function(item) {
+        document.body.addEventListener(item, function(e) {
+            selectedItem = undefined;
+            movement = false;
+            document.querySelectorAll(`${config.carouselId} a`).forEach(function(item) {
+                item.style.pointerEvents = 'all';
+            });
+        });
+    });
+
+    document.querySelectorAll(config.carouselId).forEach(function(item) {
+        let trigger = 0;
+        item.addEventListener('wheel', function(e) {
+            if(trigger !== 1) {
+                ++trigger;
+            } else {
+                let change = e.deltaX * -3;
+                let currentDelta = parseFloat(item.querySelector(config.carouselHolderId).style.transform.split('translateX(')[1]) || 0;
+                scrollCarousel(change, currentDelta, item);
+                trigger = 0;
+            }
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            return false;
+        });
+    });
+});
+    </script>
+    </body>
+</html>
