@@ -16,6 +16,25 @@ const config = {
     ]
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const rotator = document.getElementById("album-rotator-holder");
+    let scrollAmount = 0;
+    
+    function moveCarousel() {
+        scrollAmount -= 1; // Velocidade do movimento
+        rotator.style.transform = `translateX(${scrollAmount}px)`;
+
+        // Reinicia o deslocamento para criar efeito contínuo
+        if (Math.abs(scrollAmount) >= rotator.scrollWidth / 2) {
+            scrollAmount = 0;
+        }
+
+        requestAnimationFrame(moveCarousel);
+    }
+
+    moveCarousel();
+});
+
 // Async function for generating webGL waves
 const createWave = async function(selector, colors) {      
     if(document.querySelectorAll(selector) !== null && document.querySelectorAll(selector).length > 0) {

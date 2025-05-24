@@ -119,6 +119,7 @@ header nav ul li a:hover {
       float: none;
     }
   }
+  
 
 /* Conteúdo do banner */
 .banner-content {
@@ -297,6 +298,8 @@ h1 {
     font-weight: 600;
     text-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
+
+
 
 /* Seção de Serviços */
 #servicos {
